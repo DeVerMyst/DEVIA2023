@@ -1,0 +1,51 @@
+ID, ID_Client, Nom_Client, Prenom_Client, Adresse_Client, Ville_Client, Pays_Client, Email_Client, ID_Commande, Date_Commande, Montant_Commande, ID_Produit, Nom_Produit, Categorie_Produit, Adresse_Magasin, Ville_Magasin, Pays_Magasin
+1, 1, Dupont, Jean, 123 Rue de la Paix, Paris, France, jean.dupont@email.com, 101, 2023-01-15, 250.00, 501, Produit_A, Electronique, 456 Rue des Magasins, Paris, France
+2, 2, Martin, Marie, 456 Avenue des Roses, Lyon, France, marie.martin@email.com, 102, 2023-02-20, 150.00, 502, Produit_B, Mode, 789 Rue des Boutiques, Lyon, France
+3, 1, Dupont, Jean, 123 Rue de la Paix, Paris, France, jean.dupont@email.com, 103, 2023-03-10, 300.00, 501, Produit_A, Electronique, 123 Magasin Central, Paris, France
+4, 3, Leclerc, Pierre, 789 Boulevard du Commerce, Marseille, France, pierre.leclerc@email.com, 104, 2023-04-05, 50.00, 503, Produit_C, Maison, 456 Magasin Super, Marseille, France
+5, 2, Martin, Marie, 456 Avenue des Roses, Lyon, France, marie.martin@email.com, 105, 2023-05-12, 200.00, 504, Produit_D, Mode, 789 Magasin Mode, Lyon, France
+6, 4, Tremblay, Sophie, 567 Avenue des Fleurs, Nice, France, sophie.tremblay@email.com, 106, 2023-06-20, 75.00, 505, Produit_E, Alimentation, 567 Supermarché, Nice, France
+7, 5, Lefebvre, André, 890 Rue Principale, Lille, France, andre.lefebvre@email.com, 107, 2023-07-01, 120.00, 506, Produit_F, Electronique, 890 Magasin Électronique, Lille, France
+8, 6, Blanc, Isabelle, 111 Avenue des Étoiles, Bordeaux, France, isabelle.blanc@email.com, 108, 2023-08-10, 45.00, 507, Produit_G, Maison, 111 Boutiques Maison, Bordeaux, France
+9, 7, Dubois, Michel, 222 Boulevard des Arts, Toulouse, France, michel.dubois@email.com, 109, 2023-09-05, 300.00, 508, Produit_H, Mode, 222 Boutique de Mode, Toulouse, France
+10, 8, Moreau, Marie, 333 Rue des Sciences, Nantes, France, marie.moreau@email.com, 110, 2023-10-12, 80.00, 509, Produit_I, Alimentation, 333 Magasin Alimentaire, Nantes, France
+11, 9, Girard, Patrick, 444 Rue des Sports, Strasbourg, France, patrick.girard@email.com, 111, 2023-11-15, 175.00, 510, Produit_J, Maison, 444 Magasin de Décoration, Strasbourg, France
+12, 10, Roux, Nathalie, 555 Avenue des Loisirs, Marseille, France, nathalie.roux@email.com, 112, 2023-12-20, 60.00, 511, Produit_K, Electronique, 555 Électronique Express, Marseille, France
+13, 11, Petit, Olivier, 666 Rue de la Musique, Lyon, France, olivier.petit@email.com, 113, 2024-01-05, 90.00, 512, Produit_L, Mode, 666 Boutique Chic, Lyon, France
+14, 12, Thomas, Marie, 777 Boulevard de la Nature, Nice, France, marie.thomas@email.com, 114, 2024-02-10, 200.00, 513, Produit_M, Alimentation, 777 Supermarché Nature, Nice, France
+15, 13, Robert, Sylvie, 888 Avenue de l'Artisanat, Lille, France, sylvie.robert@email.com, 115, 2024-03-15, 150.00, 514, Produit_N, Maison, 888 Maison & Co., Lille, France
+16, 14, Leroy, André, 999 Rue des Jardins, Bordeaux, France, andre.leroy@email.com, 116, 2024-04-20, 300.00, 515, Produit_O, Electronique, 999 Électronique Futur, Bordeaux, France
+17, 15, Laurent, Isabelle, 123 Avenue des Voyages, Toulouse, France, isabelle.laurent@email.com, 117, 2024-05-01, 45.00, 516, Produit_P, Mode, 123 Boutique de Mode, Toulouse, France
+18, 16, Garcia, Michel, 234 Boulevard des Saveurs, Nantes, France, michel.garcia@email.com, 118, 2024-06-10, 75.00, 517, Produit_Q, Alimentation, 234 Épicerie Gourmet, Nantes, France
+19, 17, Martinez, Marie, 345 Rue de l'Écologie, Strasbourg, France, marie.martinez@email.com, 119, 2024-07-05, 100.00, 518, Produit_R, Maison, 345 Maison & Déco, Strasbourg, France
+20, 18, Fernandez, Patrick, 456 Avenue des Arts, Marseille, France, patrick.fernandez@email.com, 120, 2024-08-12, 80.00, 519, Produit_S, Electronique, 456 Électronique Avant-garde, Marseille, France
+21, 19, Garcia, Nathalie, 567 Rue des Plaisirs, Lyon, France, nathalie.garcia@email.com, 121, 2024-09-15, 120.00, 520, Produit_T, Mode, 567 Boutique de Mode, Lyon, France
+22, 20, Lopez, Olivier, 678 Avenue des Saveurs, Nice, France, olivier.lopez@email.com, 122, 2024-10-20, 35.00, 521, Produit_U, Alimentation, 678 Magasin Alimentaire, Nice, France
+23, 21, Perez, Marie, 789 Rue de l'Écologie, Lille, France, marie.perez@email.com, 123, 2024-11-25, 70.00, 522, Produit_V, Maison, 789 Maison & Déco, Lille, France
+24, 22, Dupuis, Philippe, 890 Avenue de l'Artisanat, Bordeaux, France, philippe.dupuis@email.com, 124, 2025-01-05, 150.00, 523, Produit_W, Electronique, 890 Électronique Future, Bordeaux, France
+25, 23, Martin, Anne, 111 Avenue des Voyages, Toulouse, France, anne.martin@email.com, 125, 2025-02-10, 200.00, 524, Produit_X, Mode, 111 Boutique Chic, Toulouse, France
+26, 24, Laurent, François, 222 Boulevard des Saveurs, Nantes, France, francois.laurent@email.com, 126, 2025-03-15, 95.00, 525, Produit_Y, Alimentation, 222 Épicerie Gourmet, Nantes, France
+27, 25, Leroy, Charlotte, 333 Rue de l'Écologie, Strasbourg, France, charlotte.leroy@email.com, 127, 2025-04-20, 120.00, 526, Produit_Z, Maison, 333 Maison & Co., Strasbourg, France
+28, 26, Garcia, David, 444 Avenue des Arts, Marseille, France, david.garcia@email.com, 128, 2025-05-01, 180.00, 527, Produit_AA, Electronique, 444 Électronique Express, Marseille, France
+29, 27, Moreau, Sophie, 555 Rue des Plaisirs, Lyon, France, sophie.moreau@email.com, 129, 2025-06-10, 75.00, 528, Produit_BB, Mode, 555 Boutique de Mode, Lyon, France
+30, 28, Petit, Thomas, 666 Avenue des Loisirs, Nice, France, thomas.petit@email.com, 130, 2025-07-05, 140.00, 529, Produit_CC, Alimentation, 666 Magasin Alimentaire, Nice, France
+31, 29, Blanc, Marie, 777 Boulevard de la Nature, Lille, France, marie.blanc@email.com, 131, 2025-08-12, 60.00, 530, Produit_DD, Maison, 777 Magasin de Décoration, Lille, France
+32, 30, Martin, Olivier, 888 Rue des Jardins, Bordeaux, France, olivier.martin@email.com, 132, 2025-09-15, 85.00, 531, Produit_EE, Electronique, 888 Électronique Future, Bordeaux, France
+33, 31, Dupont, Nathalie, 999 Avenue des Saveurs, Toulouse, France, nathalie.dupont@email.com, 133, 2025-10-20, 110.00, 532, Produit_FF, Mode, 999 Boutique Chic, Toulouse, France
+34, 32, Lefebvre, Olivier, 123 Avenue de l'Artisanat, Nantes, France, olivier.lefebvre@email.com, 134, 2025-11-25, 70.00, 533, Produit_GG, Alimentation, 123 Épicerie Gourmet, Nantes, France
+35, 33, Blanc, Marie, 234 Rue de l'Écologie, Strasbourg, France, marie.blanc@email.com, 135, 2025-12-10, 95.00, 534, Produit_HH, Maison, 234 Maison & Co., Strasbourg, France
+36, 34, Martin, Pierre, 345 Boulevard des Arts, Marseille, France, pierre.martin@email.com, 136, 2026-01-05, 250.00, 535, Produit_II, Electronique, 345 Électronique Avant-garde, Marseille, France
+37, 35, Moreau, Anne, 456 Avenue des Loisirs, Lyon, France, anne.moreau@email.com, 137, 2026-02-10, 175.00, 536, Produit_JJ, Mode, 456 Boutique de Mode, Lyon, France
+38, 36, Dupont, François, 567 Rue des Plaisirs, Nice, France, francois.dupont@email.com, 138, 2026-03-15, 80.00, 537, Produit_KK, Alimentation, 567 Magasin Alimentaire, Nice, France
+39, 37, Lefebvre, Charlotte, 678 Avenue des Voyages, Lille, France, charlotte.lefebvre@email.com, 139, 2026-04-20, 110.00, 538, Produit_LL, Maison, 678 Maison & Déco, Lille, France
+40, 38, Martin, David, 789 Boulevard des Saveurs, Bordeaux, France, david.martin@email.com, 140, 2026-05-01, 150.00, 539, Produit_MM, Electronique, 789 Électronique Future, Bordeaux, France
+41, 39, Petit, Sophie, 890 Avenue de l'Écologie, Toulouse, France, sophie.petit@email.com, 141, 2026-06-10, 90.00, 540, Produit_NN, Mode, 890 Boutique Chic, Toulouse, France
+42, 40, Blanc, Thomas, 111 Avenue de la Nature, Nantes, France, thomas.blanc@email.com, 142, 2026-07-05, 65.00, 541, Produit_OO, Alimentation, 111 Épicerie Gourmet, Nantes, France
+43, 41, Martin, Marie, 222 Avenue de l'Artisanat, Strasbourg, France, marie.martin@email.com, 143, 2026-08-12, 120.00, 542, Produit_PP, Maison, 222 Maison & Co., Strasbourg, France
+44, 42, Moreau, Olivier, 333 Boulevard des Jardins, Marseille, France, olivier.moreau@email.com, 144, 2026-09-15, 80.00, 543, Produit_QQ, Electronique, 333 Électronique Avant-garde, Marseille, France
+45, 43, Lefebvre, Nathalie, 444 Avenue des Arts, Lyon, France, nathalie.lefebvre@email.com, 145, 2026-10-20, 125.00, 544, Produit_RR, Mode, 444 Boutique de Mode, Lyon, France
+46, 44, Dupont, Olivier, 555 Avenue des Saveurs, Nice, France, olivier.dupont@email.com, 146, 2026-11-25, 100.00, 545, Produit_SS, Alimentation, 555 Magasin Alimentaire, Nice, France
+47, 45, Blanc, Marie, 666 Rue des Plaisirs, Lille, France, marie.blanc@email.com, 147, 2026-12-10, 70.00, 546, Produit_TT, Maison, 666 Maison & Déco, Lille, France
+48, 46, Martin, Olivier, 777 Boulevard des Loisirs, Bordeaux, France, olivier.martin@email.com, 148, 2027-01-05, 135.00, 547, Produit_UU, Electronique, 777 Électronique Future, Bordeaux, France
+49, 47, Moreau, Sophie, 888 Avenue des Saveurs, Toulouse, France, sophie.moreau@email.com, 149, 2027-02-10, 180.00, 548, Produit_VV, Mode, 888 Boutique Chic, Toulouse, France
+50, 48, Petit, Thomas, 999 Avenue de l'Écologie, Nantes, France, thomas.petit@email.com, 150, 2027-03-15, 95.00, 549, Produit_WW, Alimentation, 999 Épicerie Gourmet, Nantes, France

@@ -1,0 +1,43 @@
+-- creation d'un base de données : DEVIA2023
+
+-- CREATE SCHEMA IF NOT EXISTS DEVIA2023;
+DROP SCHEMA IF EXISTS DEVIA2023;
+CREATE SCHEMA DEVIA2023;
+USE DEVIA2023; 
+
+-- créer une table principale
+
+DROP TABLE IF EXISTS principale;
+CREATE TABLE principale
+(
+	ID INT NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(20),
+    PRIMARY KEY (ID)
+);
+
+DROP TABLE IF EXISTS genre;
+CREATE TABLE genre
+(
+	ID TINYINT NOT NULL AUTO_INCREMENT,
+    genre VARCHAR(20),
+    PRIMARY KEY (ID)
+);
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users
+(
+	ID INT NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(20),
+    genre TINYINT,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (genre) REFERENCES genre(ID) ON DELETE CASCADE
+);
+
+CREATE VIEW all_users_data AS
+SELECT u.ID, u.nom, g.genre 
+FROM users AS u 
+JOIN genre AS g 
+ON u.ID = g.ID;
+
+
+

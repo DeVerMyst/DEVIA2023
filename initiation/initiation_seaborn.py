@@ -2,12 +2,13 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+from os.path import join
 #%% Exercice 1 - Visualisation des notes des étudiants
 
 # Chargement du fichier "student_grades.csv" dans un DataFrame
 columns = ['ID', 'salle', 'note']
-grades_df = pd.read_csv("data/student_grades.csv", names=columns, header=0)
+
+grades_df = pd.read_csv( join("data","student_grades.csv"), names=columns, header=0)
 
 # Utilisation de Seaborn pour créer un histogramme représentant la distribution des notes des étudiants
 sns.histplot(grades_df['note'], bins=10, kde=True)

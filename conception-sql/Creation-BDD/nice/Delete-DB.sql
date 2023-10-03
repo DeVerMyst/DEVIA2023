@@ -1,0 +1,8 @@
+USE DEVIA2023;
+
+-- DROP SCHEMA IF EXISTS DEVIA2023; 
+
+-- DELETE FROM principale WHERE ID=4;
+DELETE FROM principale WHERE nom="Eli";
+
+DELETE FROM genre WHERE genre = "poulpe"
