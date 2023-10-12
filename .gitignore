@@ -2,3 +2,10 @@
 
 PDF
 adrien
+
+# DEV
+DEV/test/__pycache__
+DEV/components/__pycache__
+DEV/.pytest_cache 
+
+thrash
