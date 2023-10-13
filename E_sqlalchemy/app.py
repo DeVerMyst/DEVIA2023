@@ -2,40 +2,60 @@ import streamlit as st
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.base import Base
-from models.table1 import Table1
-from models.table2 import Table2
+from sqlalchemy import inspect
+from models.user import User
+from models.gender import Gender
+from models.city import City
 
-# Connexion à la base de données MySQL
-engine = create_engine('mysql+mysqlconnector://root:root_password@db/sample_db')
+
+engine = create_engine('mysql+mysqlconnector://root:root_password@localhost/sample_db?charset=utf8mb4')
+
+
 Session = sessionmaker(bind=engine)
 session = Session()
 
+
 st.title('Application SQLAlchemy Streamlit')
 
-# Création de la base de données si elle n'existe pas
-if not engine.dialect.has_table(engine, "table1"):
-    Base.metadata.create_all(engine)
 
-# Interface utilisateur Streamlit
-if st.button("Connect/Disconnect"):
-    if st.session_state.db_connected:
-        st.session_state.db_connected = False
-        st.button_label = "Connect"
-    else:
-        st.session_state.db_connected = True
-        st.button_label = "Disconnect"
 
-st.write(f"Database Connection Status: {st.button_label}")
+# # Création de la base de données si elle n'existe pas
+# if not inspect(engine).has_table("users"):
 
-if st.session_state.db_connected:
-    # Récupérer des données depuis la base de données
-    result_sql = session.execute("SELECT * FROM table1")
-    st.subheader("Using SQL Query")
-    for row in result_sql:
-        st.write(row)
+#     Base.metadata.create_all(engine)
 
-    results_orm = session.query(Table1).all()
-    st.subheader("Using SQLAlchemy ORM")
-    for row in results_orm:
-        st.write(row)
+# st.write(f"Database Connection Status: Connected")
 
+# # Formulaire d'ajout d'utilisateur
+# st.subheader("Add User to Database")
+# username = st.text_input("Username:")
+# gender_name = st.text_input("Gender:")
+# city_name = st.text_input("City:")
+
+# if st.button("Add User"):
+#     # Recherche du genre dans la base de données ou création s'il n'existe pas
+#     gender = session.query(Gender).filter_by(name=gender_name).first()
+#     if gender is None:
+#         gender = Gender(name=gender_name)
+#         session.add(gender)
+#         session.commit()
+
+#     # Recherche de la ville dans la base de données ou création s'il n'existe pas
+#     city = session.query(City).filter_by(name=city_name).first()
+#     if city is None:
+#         city = City(name=city_name)
+#         session.add(city)
+#         session.commit()
+
+#     # Ajout de l'utilisateur à la base de données
+#     user = User(username=username, gender_id=gender.id, city_id=city.id)
+#     session.add(user)
+#     session.commit()
+
+#     st.success("User added to the database.")
+
+# # Affichage des données d'utilisateurs
+# result_sql = session.query(User, Gender, City).join(Gender).join(City)
+# st.subheader("Users in the Database")
+# for user, gender, city in result_sql:
+#     st.write(f"User: {user.username}, Gender: {gender.name}, City: {city.name}")
