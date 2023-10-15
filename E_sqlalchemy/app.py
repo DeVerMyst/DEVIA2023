@@ -1,61 +1,69 @@
-import streamlit as st
+import os
+import pandas as pd
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from models.base import Base
-from sqlalchemy import inspect
-from models.user import User
-from models.gender import Gender
-from models.city import City
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import Session
+from os.path import join
+# Définir le nom de la base de données
+def bk():
+    return print("\n",79*'=','\n')
 
+database_name = "my_database"
+file_path = join("D:\[4] - GITHUB\DEVIA2023\E_sqlalchemy\data\data.csv")
 
-engine = create_engine('mysql+mysqlconnector://root:root_password@localhost/sample_db?charset=utf8mb4')
+if os.path.exists(file_path):
+    data = pd.read_csv(file_path)
+else:
+    bk()
+    print(file_path)
+    print("The file 'data.csv' does not exist in the directory 'data'")
+    bk()
 
+# Drop la base de données si elle existe
+if os.path.exists(database_name):
+    engine = create_engine("mysql+pymysql://root:root@localhost:3306/")
+    engine.execute("DROP DATABASE {}".format(database_name))
 
-Session = sessionmaker(bind=engine)
-session = Session()
+# Créer la base de données
+engine = create_engine("mysql+pymysql://root:root@localhost:3306/{}".format(database_name))
+# engine.execute("CREATE DATABASE {}".format(database_name))
 
+# Charger les modèles
+from models.model import Utilisateur, Genre, Pays
 
-st.title('Application SQLAlchemy Streamlit')
+# Ouvrir le fichier CSV
+data = pd.read_csv(file_path)
 
+# Créer une session pour accéder à la base de données
+session = Session(engine)
 
+# Remplir les tables
+for index, row in data.iterrows():
+    # Créer un objet de la table
+    if row[0] == "utilisateur":
+        object = Utilisateur(id=row[1], nom=row[2], prenom=row[3], mail=row[4], genre_id=row[5], pays_id=row[6])
+    elif row[0] == "genre":
+        object = Genre(id=row[1], nom=row[2])
+    elif row[0] == "pays":
+        object = Pays(id=row[1], nom=row[2])
 
-# # Création de la base de données si elle n'existe pas
-# if not inspect(engine).has_table("users"):
+    # Ajouter l'objet à la table
+    session.add(object)
 
-#     Base.metadata.create_all(engine)
+# Exécuter les requêtes SQL
+session.commit()
 
-# st.write(f"Database Connection Status: Connected")
+# Fermer la session
+session.close()
 
-# # Formulaire d'ajout d'utilisateur
-# st.subheader("Add User to Database")
-# username = st.text_input("Username:")
-# gender_name = st.text_input("Gender:")
-# city_name = st.text_input("City:")
+# Afficher les données de la table
+for table_name in ["utilisateur", "genre", "pays"]:
+    # Créer une instance de la classe `Table`
+    table = getattr(session.query, table_name)
 
-# if st.button("Add User"):
-#     # Recherche du genre dans la base de données ou création s'il n'existe pas
-#     gender = session.query(Gender).filter_by(name=gender_name).first()
-#     if gender is None:
-#         gender = Gender(name=gender_name)
-#         session.add(gender)
-#         session.commit()
+    # Lire les données de la table
+    results = table.all()
 
-#     # Recherche de la ville dans la base de données ou création s'il n'existe pas
-#     city = session.query(City).filter_by(name=city_name).first()
-#     if city is None:
-#         city = City(name=city_name)
-#         session.add(city)
-#         session.commit()
-
-#     # Ajout de l'utilisateur à la base de données
-#     user = User(username=username, gender_id=gender.id, city_id=city.id)
-#     session.add(user)
-#     session.commit()
-
-#     st.success("User added to the database.")
-
-# # Affichage des données d'utilisateurs
-# result_sql = session.query(User, Gender, City).join(Gender).join(City)
-# st.subheader("Users in the Database")
-# for user, gender, city in result_sql:
-#     st.write(f"User: {user.username}, Gender: {gender.name}, City: {city.name}")
+    # Afficher les résultats
+    for row in results:
+        print(row)
