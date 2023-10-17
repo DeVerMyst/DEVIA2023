@@ -1,11 +1,8 @@
-# Importez les modules SQLAlchemy et définissez votre modèle de base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
+from .base import Base
 
-Base = declarative_base()
-
-# Définissez vos classes de modèle
 class Utilisateur(Base):
     __tablename__ = "utilisateur"
 
@@ -19,15 +16,3 @@ class Utilisateur(Base):
 
     pays_id = Column(Integer, ForeignKey("pays.id"))
     pays = relationship("Pays")
-
-class Genre(Base):
-    __tablename__ = "genre"
-
-    id = Column(Integer, primary_key=True)
-    nom = Column(String(255))
-
-class Pays(Base):
-    __tablename__ = "pays"
-
-    id = Column(Integer, primary_key=True)
-    nom = Column(String(255))
