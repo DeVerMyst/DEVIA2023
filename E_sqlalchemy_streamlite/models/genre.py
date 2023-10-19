@@ -7,4 +7,4 @@ class Genre(Base):
     __tablename__ = "genre"
 
     id = Column(Integer, primary_key=True)
-    nom = Column(String(255))
+    genre = Column(String(255))

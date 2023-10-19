@@ -7,4 +7,4 @@ class Pays(Base):
     __tablename__ = "pays"
 
     id = Column(Integer, primary_key=True)
-    nom = Column(String(255))
+    pays = Column(String(255))
