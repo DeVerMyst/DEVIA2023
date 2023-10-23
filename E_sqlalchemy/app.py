@@ -8,6 +8,20 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.model import Utilisateur, Genre, Pays, Base
 
+from sqlalchemy_utils import database_exists, create_database, drop_database
+
+import config
+
+# Importation des informations de connexion
+DATABASE_HOST = config.DATABASE_HOST
+DATABASE_NAME = config.DATABASE_NAME
+DATABASE_USERNAME = config.DATABASE_USERNAME
+DATABASE_PASSWORD = config.DATABASE_PASSWORD
+
+# Création du moteur de base de données
+engine = create_engine(f"mysql+pymysql://{DATABASE_USERNAME}:{DATABASE_PASSWORD}@{DATABASE_HOST}/{DATABASE_NAME}")
+
+
 # Définir le nom de la base de données
 def bk():
     return print("\n",79*'=','\n')
@@ -27,9 +41,7 @@ else:
     bk()
 
 # Création de la connexion à la base de données
-from sqlalchemy_utils import database_exists, create_database, drop_database
-
-engine = create_engine("mysql+pymysql://root:root@localhost/my_database_tmp")
+# engine = create_engine("mysql+pymysql://root:root@localhost/my_database_tmp")
 if database_exists(engine.url):
     drop_database(engine.url)    
 
@@ -119,3 +131,6 @@ print("JOINTURES")
 bk()
 print( df ) 
 bk()
+
+
+

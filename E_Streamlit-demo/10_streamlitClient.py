@@ -26,4 +26,4 @@ if st.button('Obtenir des données depuis le serveur'):
         st.write('Erreur lors de la récupération des données depuis le serveur.')
 
 if __name__ == '__main__':
-    st.write('Exécutez cette application Streamlit en utilisant la commande : streamlit run streamlit_app.py')
+    st.write('Premier test API REST')
