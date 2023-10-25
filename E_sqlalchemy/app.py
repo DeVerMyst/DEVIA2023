@@ -29,7 +29,6 @@ def bk():
 file_path = join(join("E_sqlalchemy","data","data.csv"))
 
 if os.path.exists(file_path):
-    data = pd.read_csv(file_path)
     # Ouvrir le fichier CSV
     data = pd.read_csv(file_path)
 else:
