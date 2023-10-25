@@ -1,13 +1,2 @@
 .DS_STORE
-
-PDF
-adrien
-
-# DEV
-E_dev_app/test/__pycache__
-E_dev_app/components/__pycache__
-E_dev_app/.pytest_cache 
-
-E_sqlalchemy/models/__pycache__
-
-thrash
+__pycache__/
