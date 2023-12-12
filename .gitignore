@@ -4,3 +4,6 @@ G_*
 H_*
 Y_*
 I_*
+
+*.keras
+*.json
