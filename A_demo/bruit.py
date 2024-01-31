@@ -9,7 +9,7 @@ signal[:20] = 1.0
 # Paramètres du bruit et nombre de réalisations
 nb_realisations = 49
 ecart_type_bruit = 0.2
-Ò
+
 # Génération du bruit gaussien à moyenne nulle pour toutes les réalisations
 bruit = np.random.normal(
     loc=0.0, scale=ecart_type_bruit, size=(nb_realisations, taille_porte)
