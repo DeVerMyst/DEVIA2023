@@ -2,10 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import statistics as st
-def plot_stats(data, text, ax):
 
+
+def plot_stats(data, text, ax):
     # Création de l'histogramme des données
-    n, bins, _ = ax.hist(data, bins=10, density=True, alpha=0.7, color='skyblue', label='Données')
+    n, bins, _ = ax.hist(
+        data, bins=10, density=True, alpha=0.7, color="skyblue", label="Données"
+    )
 
     # Calcul des statistiques
     mean_value = np.mean(data)
@@ -16,19 +19,19 @@ def plot_stats(data, text, ax):
 
     # Calcul des valeurs pour les lignes verticales des statistiques
     lines_x = [mean_value, mode_value, median_value]
-    colors = ['blue', 'red', 'black']
-    labels = ['Moyenne', 'Mode', 'Médiane']
+    colors = ["blue", "red", "black"]
+    labels = ["Moyenne", "Mode", "Médiane"]
     for x, color, label in zip(lines_x, colors, labels):
-        ax.axvline(x=x, color=color, linestyle='--', linewidth=2, label=label)
+        ax.axvline(x=x, color=color, linestyle="--", linewidth=2, label=label)
 
     # Calcul des valeurs pour les lignes en pointillés pour l'écart type
     std_values = [std_value, 3 * std_value, 5 * std_value]
-    colors = ['orange', 'green', 'purple']    
-    std_labels = ['1 Sigma', '3 Sigma', '5 Sigma']
+    colors = ["orange", "green", "purple"]
+    std_labels = ["1 Sigma", "3 Sigma", "5 Sigma"]
     for std, color, label in zip(std_values, colors, std_labels):
-        ax.axvline(x=mean_value + std, color=color, linestyle=':', linewidth=2)
-        ax.axvline(x=mean_value - std, color=color, linestyle=':', linewidth=2)
-        ax.text(mean_value + std, 0.02, label, color=color, fontsize=12, ha='center')
+        ax.axvline(x=mean_value + std, color=color, linestyle=":", linewidth=2)
+        ax.axvline(x=mean_value - std, color=color, linestyle=":", linewidth=2)
+        ax.text(mean_value + std, 0.02, label, color=color, fontsize=12, ha="center")
 
     # Ajouter des flèches avec des textes pour indiquer les statistiques
     # arrow_props = {'arrowstyle': '->'}
@@ -40,10 +43,9 @@ def plot_stats(data, text, ax):
     ax.legend()
 
     # Ajouter des labels et un titre
-    ax.set_xlabel('Valeurs')
-    ax.set_ylabel('Densité')
+    ax.set_xlabel("Valeurs")
+    ax.set_ylabel("Densité")
     ax.set_title(text)
-
 
 
 # Générer un échantillon aléatoire de données
@@ -52,7 +54,9 @@ np.random.seed(42)
 # Création des trois plots côte à côte
 fig, axes = plt.subplots(1, 3, figsize=(20, 5))
 
-fig.suptitle('Différence entre Moyenne, Mode, Médiane, Écart Type (1 Sigma, 3 Sigma, 5 Sigma) et Variance')
+fig.suptitle(
+    "Différence entre Moyenne, Mode, Médiane, Écart Type (1 Sigma, 3 Sigma, 5 Sigma) et Variance"
+)
 
 # Exemple d'utilisation de la fonction avec trois distributions différentes
 distribution1 = np.random.exponential(scale=2, size=2000)

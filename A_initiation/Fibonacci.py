@@ -7,10 +7,12 @@ def fibonacci(order):
 
     return fib_list
 
+
 def main():
     n = int(input("Entrez l'ordre de la suite de Fibonacci : "))
     result = fibonacci(n)
     print("Suite de Fibonacci jusqu'à l'ordre", n, ":", result)
+
 
 if __name__ == "__main__":
     main()

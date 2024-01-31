@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Paramètres de la distribution normale
-mu = 0    # Moyenne
-sigma = 1 # Écart type
+mu = 0  # Moyenne
+sigma = 1  # Écart type
 
 # Création des données pour la courbe de la distribution normale
 x = np.linspace(-5, 5, 1000)
-pdf = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-(x - mu)**2 / (2 * sigma**2))
+pdf = (1 / (sigma * np.sqrt(2 * np.pi))) * np.exp(-((x - mu) ** 2) / (2 * sigma**2))
 
 # Nombre de points à générer à chaque itération
 num_points_per_iter = 10
@@ -25,31 +25,33 @@ fig, (ax_left, ax_center, ax_right) = plt.subplots(1, 3, figsize=(15, 5))
 # Axe du centre pour les points aléatoires
 ax_center.set_xlim(0, num_points_per_iter * num_iterations)
 ax_center.set_ylim(-4, 4)
-ax_center.set_title('Points aléatoires')
+ax_center.set_title("Points aléatoires")
 
 # Axe de gauche pour l'accumulation des points (histogramme vertical)
-ax_left.set_xlim(0, num_iterations*num_points_per_iter/4)
+ax_left.set_xlim(0, num_iterations * num_points_per_iter / 4)
 ax_left.set_ylim(-4, 4)
-ax_left.set_title('Accumulation des points')
+ax_left.set_title("Accumulation des points")
 
 # Axe de droite pour l'histogramme normalisé
 ax_right.set_xlim(-4, 4)
 ax_right.set_ylim(0, 0.4)
-ax_right.set_title('Histogramme normalisé')
-ax_right.set_xlabel('Valeurs')
-ax_right.set_ylabel('Densité')
+ax_right.set_title("Histogramme normalisé")
+ax_right.set_xlabel("Valeurs")
+ax_right.set_ylabel("Densité")
 
 # Initialisation des éléments pour la mise à jour de l'animation
-points_center, = ax_center.plot([], [], 'bo', alpha=0.5)
+(points_center,) = ax_center.plot([], [], "bo", alpha=0.5)
 
 # Création des barres de l'histogramme à gauche
-left_rects = [plt.Rectangle((0, 0), 0, 0.2, color='b', alpha=0.5) for _ in range(20)]
+left_rects = [plt.Rectangle((0, 0), 0, 0.2, color="b", alpha=0.5) for _ in range(20)]
 for rect in left_rects:
     ax_left.add_patch(rect)
 
-hist_normalized, = ax_right.plot([], [], 'b-', alpha=0.75)
-normal_curve, = ax_right.plot([], [], 'r-', alpha=0.75)
-nb=0
+(hist_normalized,) = ax_right.plot([], [], "b-", alpha=0.75)
+(normal_curve,) = ax_right.plot([], [], "r-", alpha=0.75)
+nb = 0
+
+
 def update(frame):
     global data, nb
 
@@ -79,12 +81,15 @@ def update(frame):
     normal_curve.set_data(x, pdf)
 
     # Arrêter l'animation après un certain nombre d'itérations
-    nb+=1
+    nb += 1
     if nb == num_iterations:
         ani.event_source.stop()
 
     return points_center, *left_rects, hist_normalized, normal_curve
 
+
 # Création de l'animation
-ani = animation.FuncAnimation(fig, update, frames=num_iterations, interval=100, blit=True)
+ani = animation.FuncAnimation(
+    fig, update, frames=num_iterations, interval=100, blit=True
+)
 plt.show()
