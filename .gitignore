@@ -1,10 +1,10 @@
 .DS_STORE
 __pycache__/
-G_*
-H_*
-Y_*
-I_*
+
+nodemodules
 
 *.keras
 *.json
 *.wav
+
+.websocket
